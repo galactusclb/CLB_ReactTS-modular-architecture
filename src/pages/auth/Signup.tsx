@@ -1,16 +1,15 @@
-import { LoginForm } from "features/authentication";
-import React from "react";
+import { SignupForm } from "features/authentication";
 
-const Login = () => {
+const Signup = () => {
 	return (
 		<div className="container py-5">
 			<div className="row">
 				<div className="col-lg-5 mx-auto">
-					<LoginForm />
+					<SignupForm />
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Login;
+export default Signup;

@@ -1,5 +1,5 @@
 import Login from "@pages/auth/Login"
-import Register from "@pages/auth/Register"
+import Signup from "@pages/auth/Signup"
 import { NotFound } from "pages/NotFound"
 
 const routes = [
@@ -16,8 +16,8 @@ const routes = [
         component: Login
     },
     {
-        path: "/register",
-        component: Register
+        path: "/signup",
+        component: Signup
     },
     {
         path: "*",
