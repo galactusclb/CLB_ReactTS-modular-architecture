@@ -1,6 +1,7 @@
 import { RouteType } from "@models/Route.model"
 import { NotFound } from "@pages/NotFound"
 import Dashboard from "@pages/admin/Dashboard"
+import FeedbackList from "@pages/admin/feedbacks/FeedackList"
 import ProductList from "@pages/admin/products/ProductList"
 
 const routes: RouteType[] = [
@@ -16,6 +17,10 @@ const routes: RouteType[] = [
     {
         path: "/products",
         component: ProductList
+    },
+    {
+        path: "/feedbacks",
+        component: FeedbackList
     },
     // {
     //     path: "/feedbacks/:id",

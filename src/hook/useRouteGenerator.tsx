@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, Route } from "react-router-dom";
 
 import { RouteType } from "@models/Route.model";
-import useAuth from "../features/authentication/hooks/useAuth";
+import useAuth from "features/authentication/hooks/useAuth";
 
 const useRouteGenerator = () => {
 	const { userDetails } = useAuth();
