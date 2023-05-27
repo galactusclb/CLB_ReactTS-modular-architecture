@@ -19,7 +19,7 @@ const SidemenuSection = () => {
 		{
 			title: "Users",
 			icon: <Users size={20} />,
-			path: "",
+			path: "users",
 		},
 		{
 			title: "Files",

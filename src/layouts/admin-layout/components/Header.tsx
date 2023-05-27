@@ -7,7 +7,7 @@ const Header = () => {
 	const { isLoggedIn, userDetails, logout } = useAuth();
 
 	return (
-		<header className="border-b-2 border-gray-100 py-2 px-4 shadow-sm">
+		<header className="border-b-2 border-gray-100 py-2 px-8 shadow-sm">
 			<nav className="">
 				<div className="text-white">
 					<Logo />

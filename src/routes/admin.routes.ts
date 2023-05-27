@@ -3,6 +3,7 @@ import { NotFound } from "@pages/NotFound"
 import Dashboard from "@pages/admin/Dashboard"
 import FeedbackList from "@pages/admin/feedbacks/FeedackList"
 import ProductList from "@pages/admin/products/ProductList"
+import Users from "@pages/admin/users/Users"
 
 const routes: RouteType[] = [
     {
@@ -21,6 +22,10 @@ const routes: RouteType[] = [
     {
         path: "/feedbacks",
         component: FeedbackList
+    },
+    {
+        path: "/users",
+        component: Users
     },
     // {
     //     path: "/feedbacks/:id",
