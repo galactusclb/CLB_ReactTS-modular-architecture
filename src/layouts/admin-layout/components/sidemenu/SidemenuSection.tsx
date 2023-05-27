@@ -8,20 +8,23 @@ const SidemenuSection = () => {
 	const menuItems: TypeSidemenuItem[] = [
 		{
 			title: "Project",
-			isActive: true,
 			icon: <Database size={20} />,
+			path: "dashboard",
 		},
 		{
 			title: "Statistics",
 			icon: <BarChart size={20} />,
+			path: "feedback",
 		},
 		{
 			title: "Users",
 			icon: <Users size={20} />,
+			path: "",
 		},
 		{
 			title: "Files",
 			icon: <File size={20} />,
+			path: "",
 		},
 	];
 
@@ -33,8 +36,8 @@ const SidemenuSection = () => {
 					<SidemenuItem
 						key={key}
 						title={item?.title}
-						isActive={item?.isActive}
 						icon={item?.icon}
+						path={item?.path}
 					/>
 				);
 			})}
