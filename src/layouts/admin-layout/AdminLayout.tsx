@@ -21,7 +21,7 @@ const AdminLayout = () => {
 			<div className="max-h-full col-span-2 bg-gray-900 overflow-hidden">
 				<Sidemenu />
 			</div>
-			<div className="col-span-10 bg-white">
+			<div className="col-span-10 bg-white max-w-screen overflow-hidden">
 				<Header />
 				<div className="">
 					<Routes>

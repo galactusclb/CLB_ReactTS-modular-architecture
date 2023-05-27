@@ -2,18 +2,15 @@ import React from "react";
 import { Bell } from "react-feather";
 
 import ActionButton from "@components/shared/ActionButton";
+import Logo from "@components/shared/Logo";
 
 const SidemenuHeader = () => {
 	return (
 		<div className="flex flex-row justify-between items-center py-3 px-3">
-			<h3 className="text-xl text-gray-100 w-10 h-w-10 border-2 border-transparent rounded-lg overflow-hidden">
-				<img
-					src="/src/assets/images/logo.png"
-					className="w-full h-full"
-					alt=""
-				/>
-			</h3>
-			<ActionButton icon={<Bell size={20} />} enableNotifyIndicator={true} />
+			<Logo />
+			<span className="ms-auto">
+				<ActionButton icon={<Bell size={20} />} enableNotifyIndicator={true} />
+			</span>
 		</div>
 	);
 };
