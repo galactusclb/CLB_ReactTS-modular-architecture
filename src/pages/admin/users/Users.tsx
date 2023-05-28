@@ -3,6 +3,7 @@ import { UploadCloud } from "react-feather";
 
 import { PrimaryButton } from "@components/buttons";
 import PageHeader from "@components/shared/PageHeader";
+import { UserTable } from "features/admin/users";
 
 const Users = () => {
 	return (
@@ -11,14 +12,16 @@ const Users = () => {
 				title={"Users"}
 				buttonGroup={[
 					<PrimaryButton
-						theme="outline"
+						variant="secondary"
 						icon={<UploadCloud size={14} />}
 						title={"Upload"}
 					/>,
 					<PrimaryButton title={"Add Customer"} />,
 				]}
 			/>
-			<div className="grid grid-cols-3 gap-8 mt-8"></div>
+			<div className="mt-8">
+				<UserTable />
+			</div>
 		</div>
 	);
 };

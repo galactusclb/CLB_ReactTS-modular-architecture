@@ -1,38 +1,74 @@
 import React from "react";
 
-type ButtonTheme = "solid" | "outline";
+type ButtonVariant =
+	| "default"
+	| "secondary"
+	| "outline"
+	| "destructive"
+	| "ghost"
+	| "link";
+
+type ButtonSize = "sm" | "lg" | "default";
 
 interface Props {
 	type?: "button" | "link";
 	title: string | React.ReactNode;
 	icon?: string | React.ReactNode;
 	onClick?: () => void;
-	theme?: ButtonTheme;
+	variant?: ButtonVariant;
+	size?: ButtonSize;
 }
 
 const PrimaryButton = ({
-	theme = "solid",
 	type = "button",
+	variant = "default",
+	size = "default",
 	title,
 	icon,
 	onClick,
 }: Props) => {
-	const getButtonTheme = (value: ButtonTheme) => {
+	const getButtonVariants = (value: ButtonVariant) => {
 		switch (value) {
-			case "solid": {
-				return "bg-gray-900 text-gray-50 border-gray-900 hover:bg-gray-700";
+			case "secondary": {
+				return "bg-secondary text-secondary-foreground hover:bg-secondary/80";
 			}
 			case "outline": {
-				return "bg-white text-gray-900 border-gray-900 hover:bg-gray-100";
+				return "border border-input hover:bg-accent hover:text-accent-foreground";
+			}
+			case "destructive": {
+				return "bg-destructive text-destructive-foreground hover:bg-destructive/90";
+			}
+			case "ghost": {
+				return "hover:bg-accent hover:text-accent-foreground";
+			}
+			case "link": {
+				return "underline-offset-4 hover:underline text-primary";
+			}
+			default: {
+				return "bg-primary text-primary-foreground hover:bg-primary/90";
+			}
+		}
+	};
+
+	const getButtonSize = (value: ButtonSize) => {
+		switch (value) {
+			case "lg": {
+				return "h-11 px-8";
+			}
+			case "sm": {
+				return "h-9 px-3";
+			}
+			default: {
+				return "h-10 py-2 px-4";
 			}
 		}
 	};
 
 	return (
 		<div
-			className={`flex flex-row flex-nowrap gap-x-2 items-center ${getButtonTheme(
-				theme
-			)} border-2  leading-tight text-sm cursor-pointer rounded-xl px-6 py-3 duration-200`}
+			className={`inline-flex items-center justify-center gap-x-2 rounded-xl text-sm font-medium transition-colors cursor-pointer  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background ${getButtonVariants(
+				variant
+			)} ${getButtonSize(size)}`}
 			onClick={onClick}
 		>
 			{icon}
@@ -40,5 +76,4 @@ const PrimaryButton = ({
 		</div>
 	);
 };
-
 export default PrimaryButton;

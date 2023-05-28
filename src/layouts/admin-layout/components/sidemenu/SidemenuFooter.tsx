@@ -20,4 +20,4 @@ const SidemenuFooter = () => {
 	);
 };
 
-export default SidemenuFooter;
+export default React.memo(SidemenuFooter);

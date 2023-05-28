@@ -23,7 +23,7 @@ const AdminLayout = () => {
 			</div>
 			<div className="col-span-10 bg-white max-w-screen overflow-hidden">
 				<Header />
-				<div className="">
+				<div className="max-h-full overflow-y-auto pb-20">
 					<Routes>
 						{getRoutes(AdminRoutes, location?.pathname)}
 						{/* <Route path="*" element={<Navigate to="/feedbacks" replace />} /> */}
