@@ -11,12 +11,10 @@ const Users = () => {
 			<PageHeader
 				title={"Users"}
 				buttonGroup={[
-					<PrimaryButton
-						variant="secondary"
-						icon={<UploadCloud size={14} />}
-						title={"Upload"}
-					/>,
-					<PrimaryButton title={"Add Customer"} />,
+					<PrimaryButton variant="secondary">
+						<UploadCloud size={14} /> Upload
+					</PrimaryButton>,
+					<PrimaryButton>Add Customer</PrimaryButton>,
 				]}
 			/>
 			<div className="mt-8">

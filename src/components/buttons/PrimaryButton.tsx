@@ -12,20 +12,20 @@ type ButtonSize = "sm" | "lg" | "default";
 
 interface Props {
 	type?: "button" | "link";
-	title: string | React.ReactNode;
-	icon?: string | React.ReactNode;
+	children: React.ReactNode;
 	onClick?: () => void;
 	variant?: ButtonVariant;
 	size?: ButtonSize;
+	className?: string;
 }
 
 const PrimaryButton = ({
 	type = "button",
 	variant = "default",
 	size = "default",
-	title,
-	icon,
+	children,
 	onClick,
+	className,
 }: Props) => {
 	const getButtonVariants = (value: ButtonVariant) => {
 		switch (value) {
@@ -68,11 +68,10 @@ const PrimaryButton = ({
 		<div
 			className={`inline-flex items-center justify-center gap-x-2 rounded-xl text-sm font-medium transition-colors cursor-pointer  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background ${getButtonVariants(
 				variant
-			)} ${getButtonSize(size)}`}
+			)} ${getButtonSize(size)} ${className}`}
 			onClick={onClick}
 		>
-			{icon}
-			{title}
+			{children}
 		</div>
 	);
 };

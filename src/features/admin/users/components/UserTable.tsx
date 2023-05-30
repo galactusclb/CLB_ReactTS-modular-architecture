@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
 
 import DataTable from "@components/ui/table/DataTable";
-import { TableHeader } from "@components/ui/table";
+import { DataTableColumnHeader, TableHeader } from "@components/ui/table";
 import { PrimaryButton } from "@components/buttons";
 import { DownloadCloud } from "react-feather";
 
@@ -27,15 +27,15 @@ async function getData(): Promise<Payment[]> {
 }
 
 export const columns: ColumnDef<Payment>[] = [
-	// {
-	// 	accessorKey: "status",
-	//     header: ({ column }) => (
-	//       <DataTableColumnHeader column={column} title="Status" />
-	//     ),
-	//     cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
-	//     enableSorting: false,
-	//     enableHiding: false,
-	//   },
+	{
+		accessorKey: "status",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Status" />
+		),
+		cell: ({ row }) => <div className="w-[80px]">{row.getValue("status")}</div>,
+		// enableSorting: false,
+		// enableHiding: false,
+	},
 	{
 		accessorKey: "email",
 		header: "Email",
@@ -62,13 +62,15 @@ const UserTable = () => {
 
 	return (
 		<div className="flex flex-col">
-			{/* <TableHeader
+			<TableHeader
 				title={"Customer"}
 				descripion={"Lorem ipsum dolor sit amet consectetur."}
 				rightSideActions={[
-					<PrimaryButton title={"Export"} icon={<DownloadCloud size={14} />} />,
+					<PrimaryButton>
+						<DownloadCloud size={14} /> Export
+					</PrimaryButton>,
 				]}
-			/> */}
+			/>
 
 			<DataTable columns={columns} data={data} />
 		</div>
