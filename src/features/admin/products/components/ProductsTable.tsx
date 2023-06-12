@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useProducts } from "../hooks/useProducts";
 
 const ProductsTable = () => {
-	const { products, isFetching, refetch } = useProducts();
 	const navigate = useNavigate();
+
+	const { products, isFetching, refetch } = useProducts();
 
 	return (
 		<div className="row">
 			<div className="d-flex">
-				{isFetching ? "Loading" : "none"}
 				<button
 					className="btn btn-secondary ms-auto"
 					onClick={() => {
